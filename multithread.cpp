@@ -1,27 +1,25 @@
-// task 2
-/*
 #include <iostream>
 
 using namespace std;
 
-string csu(int *size)
+void *csu()
 {
-    return "helo world\n";
+    cout << "csu  ";
 }
 
-string sb(int *size)
+void *sb()
 {
-    return "helo world\n";
+    cout << "sb  ";
 }
 
-string csusb(int *size)
+void *csusb()
 {
-    return "helo world\n";
+    cout << "csusb  ";
 }
 
-string number(int *size)
+void *number(int size)
 {
-    return "helo world\n";
+    cout << size << "  ";
 }
 
 int main()
@@ -41,13 +39,27 @@ int main()
         return 0;
     }
 
-    int *array[size];
+    int array[size];
+    int mod1, mod2;
 
-    for (int i = 0; i < sizeof(array); i++){
-
+    for (int i = 0; i < size; i++)
+    {
+        array[i] = i + 1;
     }
 
+    for (int i = 0; i < size; i++)
+    {
+        mod1 = array[i] % 2;
+        mod2 = array[i] % 5;
+        if (mod1 == 0 && mod2 == 0)
+            csusb();
+        else if (mod1 != 0 && mod2 != 0)
+            number(array[i]);
+        else if (mod1 == 0 && mod2 != 0)
+            csu();
+        else if (mod2 == 0 && mod1 != 0)
+            sb();
+    }
 
     return 0;
 }
-*/
