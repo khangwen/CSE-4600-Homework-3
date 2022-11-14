@@ -17,9 +17,9 @@ void *csusb() // csusb helper function
     cout << "csusb  ";
 }
 
-void *number(int size) // number helper function
+void *number(int input) // number helper function
 {
-    cout << size << "  ";
+    cout << input << "  ";
 }
 
 int main() // main function
